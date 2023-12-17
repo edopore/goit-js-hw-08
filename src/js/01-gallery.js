@@ -1,17 +1,17 @@
 // Add imports above this line
-import { galleryItems } from "./gallery-items";
+import { galleryItems } from './gallery-items';
 // Change code below this line
 
 // Descrito en la documentación
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 // Importación adicional de estilos
-import "simplelightbox/dist/simple-lightbox.min.css";
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-let gallery = document.querySelector(".gallery");
+let gallery = document.querySelector('.gallery');
 
 const newImages = [...galleryItems]
   .map(
-    (galleryItem) =>
+    galleryItem =>
       `
 <li class="gallery__item">
    <a class="gallery__link" href="${galleryItem.original}">
@@ -19,14 +19,14 @@ const newImages = [...galleryItems]
    </a>
 </li>`
   )
-  .join("");
+  .join('');
 
-gallery.insertAdjacentHTML("beforeend", newImages);
+gallery.insertAdjacentHTML('beforeend', newImages);
 
-gallery = new SimpleLightbox(".gallery a");
-gallery.on("show.simplelightbox", function () {
+gallery = new SimpleLightbox('.gallery a');
+gallery.on('show.simplelightbox', function () {
   gallery.options.CaptionDelay = 250;
 });
-gallery.on("error.simplelightbox", function (e) {
+gallery.on('error.simplelightbox', function (e) {
   console.log(e); // Some usefull information
 });
