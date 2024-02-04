@@ -28,5 +28,5 @@ gallery.on('show.simplelightbox', function () {
   gallery.options.CaptionDelay = 250;
 });
 gallery.on('error.simplelightbox', function (e) {
-  console.log(e); // Some usefull information
+  console.log(e);
 });
